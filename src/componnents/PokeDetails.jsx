@@ -1,12 +1,16 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import axios from "axios";
+import { addToTeam, deleteFromTeam } from "../features/team/teamSlice";
 
 export const PokeDetails = () =>{
     const [data, setData] = useState();
     const [err, setErr] = useState(false);
     const [loading, setLoading] = useState(true);
-
+    
+    const dispatch = useDispatch();
+    
     const {id} = useParams();
    
 
@@ -45,8 +49,13 @@ export const PokeDetails = () =>{
 
                         <li>Name : {data.species.name}</li>
                         {data.types.map((value , index) =>
-                            (<li>Type {index} : {value.type.name}</li>))
+                            (<li key={index}>Type {index} : {value.type.name}</li>))
                         }
+
+                <div>
+                    <button onClick={() => dispatch(addToTeam(data.id))}>Add</button>
+                    <button onClick={() => dispatch(deleteFromTeam(data.id))}>Delete</button>
+                </div>
 
                     </ul>
                 </div>

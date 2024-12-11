@@ -7,6 +7,7 @@ import { NavBar } from './componnents/NavBar'
 import { Home } from './pages/Home'
 import { PokeList } from './pages/PokeList'
 import { PokeDetails } from './componnents/PokeDetails'
+import { Team } from './componnents/addToTeam/Team'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -36,6 +37,7 @@ function App() {
 
       <BrowserRouter>
           <NavBar/>
+          <Team/>
           <Routes>
             <Route path='/' Component={Home}/>
             <Route path='/pokelist' Component={PokeList}/>
