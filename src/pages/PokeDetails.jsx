@@ -1,16 +1,17 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 import { addToTeam, deleteFromTeam } from "../features/team/teamSlice";
+import axios from "axios";
 
 export const PokeDetails = () =>{
     const [data, setData] = useState();
     const [err, setErr] = useState(false);
     const [loading, setLoading] = useState(true);
     
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); //Pas besoin d'importer un dispatch depuis un autre fichier
     
+    const team = useSelector((state) => state.team.value);
     const {id} = useParams();
    
 
@@ -54,7 +55,9 @@ export const PokeDetails = () =>{
 
                 <div>
                     <button onClick={() => dispatch(addToTeam(data.id))}>Add</button>
-                    <button onClick={() => dispatch(deleteFromTeam(data.id))}>Delete</button>
+                    {team.includes(data.id) && 
+                        <button onClick={() => dispatch(deleteFromTeam(data.id))}>Delete</button>
+                    }
                 </div>
 
                     </ul>

@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { deleteFromTeam } from "../features/team/teamSlice";
 import axios from "axios";
 
 
@@ -8,6 +10,8 @@ export const Team = () => {
    const [pokemons, setPokemons] = useState([]);
    const [ loading, setLoading ] = useState(true); 
    const [ err, setErr ] = useState(false);
+   
+   const dispatch = useDispatch();
 
     useEffect(()=>{
 
@@ -38,14 +42,17 @@ export const Team = () => {
         return <p>Une erreur est survenue .</p>
 
     return (
-        <>
-            <h2>La team</h2>
+        <aside>
+            <h2>Your Team</h2>
+            
             <ul>
-               
                      {pokemons.length > 0 ? (
                         pokemons.map((pokemon) => (
-                            <li key={pokemon.id}>{pokemon.name}</li>
+                            <li key={pokemon.id}>{pokemon.name} 
+                                <button onClick={() => dispatch(deleteFromTeam(pokemon.id))}>Delete</button> 
+                            </li>
                         ))
+                        
                     ) : (
                         <p>Aucun Pokémon dans l'équipe.</p>
                     )}
@@ -56,6 +63,6 @@ export const Team = () => {
                     // )) */}
                 
             </ul>
-        </>
+        </aside>
     )
 }

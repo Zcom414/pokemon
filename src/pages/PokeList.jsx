@@ -12,7 +12,7 @@ export const PokeList = () => {
     useEffect(() => {
         const fetchPokemon = async () => {
             try {
-                const response = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=50");
+                const response = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=151");
                 setPokemons(response.data.results) 
             } catch (err) {
                 console.error(err);
@@ -32,7 +32,7 @@ export const PokeList = () => {
         return <p>Une erreur est survenue.</p>
 
     return (
-        <div>
+        <section>
             <h1>Liste des pokémons</h1>
             <ul>
                 { pokemons.map((pokemon, index) => {
@@ -40,6 +40,6 @@ export const PokeList = () => {
                     return <li key={index}><Link to={`/pokemon/${id}`}>{pokemon.name}</Link></li>
                 }) }
             </ul>
-        </div>
+        </section>
     )
 }
