@@ -44,24 +44,25 @@ export const PokeDetails = () =>{
 
         return(
         <section>
-            <img src={data.sprites.front_default} alt="bulbisar"/>
-                <div>
-                    <ul>
+            <h2>{`${data.name}`}'s details</h2>
+            <img src={data.sprites.front_default} alt={`sprite_of_${data.name}`}/>
+            
+            <div className="detail">
+                <ul className="detail_list">
 
-                        <li>Name : {data.species.name}</li>
-                        {data.types.map((value , index) =>
-                            (<li key={index}>Type {index} : {value.type.name}</li>))
-                        }
+                    <li>Name : {data.species.name}</li>
+                    {data.types.map((value , index) =>
+                        (<li key={index}>Type {index} : {value.type.name}</li>))
+                    }
+                </ul>
 
-                <div>
+                <div className="button_container">
                     <button onClick={() => dispatch(addToTeam(data.id))}>Add</button>
                     {team.includes(data.id) && 
                         <button onClick={() => dispatch(deleteFromTeam(data.id))}>Delete</button>
                     }
                 </div>
-
-                    </ul>
-                </div>
+            </div>
         </section>
         )
     

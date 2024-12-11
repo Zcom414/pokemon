@@ -45,7 +45,7 @@ export const Team = () => {
         <aside>
             <h2>Your Team</h2>
             
-            <ul>
+            <ul className="team_list">
                      {pokemons.length > 0 ? (
                         pokemons.map((pokemon) => (
                             <li key={pokemon.id}>{pokemon.name} 
@@ -56,12 +56,6 @@ export const Team = () => {
                     ) : (
                         <p>Aucun Pokémon dans l'équipe.</p>
                     )}
-                    
-                    {/* // pokemons.length > 0 &&
-                    // pokemons.map((pokemon) => (
-                    //     <li key={pokemon.id}>{pokemon.name}</li>
-                    // )) */}
-                
             </ul>
         </aside>
     )

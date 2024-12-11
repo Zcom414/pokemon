@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const Home = () => {
 
     return(
@@ -10,7 +12,7 @@ export const Home = () => {
             </p> 
             
             <button><Link to="/pokelist">POKEMON LIST</Link></button>   
-            
+
         </section>
     )
 }

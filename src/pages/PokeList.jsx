@@ -33,8 +33,8 @@ export const PokeList = () => {
 
     return (
         <section>
-            <h1>Liste des pokémons</h1>
-            <ul>
+            <h2>Liste des pokémons</h2>
+            <ul className="poke_list">
                 { pokemons.map((pokemon, index) => {
                     const id = pokemon.url.match(/\/pokemon\/(\d+)\//)[1];
                     return <li key={index}><Link to={`/pokemon/${id}`}>{pokemon.name}</Link></li>
