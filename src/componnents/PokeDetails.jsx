@@ -8,6 +8,7 @@ export const PokeDetails = () =>{
     const [loading, setLoading] = useState(true);
 
     const {id} = useParams();
+   
 
         useEffect(()=>{
             const fetchData = async() => {
@@ -41,11 +42,12 @@ export const PokeDetails = () =>{
             <img src={data.sprites.front_default} alt="bulbisar"/>
                 <div>
                     <ul>
+
                         <li>Name : {data.species.name}</li>
-                        <li>Type 1 : {data.types[0].type.name}</li>
-                        {data.type[1] && (
-                            <li>Type 2 : {data.types[1].type.name}</li>
-                        )}
+                        {data.types.map((value , index) =>
+                            (<li>Type {index} : {value.type.name}</li>))
+                        }
+
                     </ul>
                 </div>
         </section>
