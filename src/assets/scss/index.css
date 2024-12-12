@@ -15,8 +15,13 @@
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
+@font-face {
+  font-family: "sour-gummy";
+  src: local("sour-gummy"), url(../fonts/SourGummy-Thin.ttf) format("truetype");
+}
 html {
   font-size: 62.5%;
+  font-family: "sour-gummy";
   background-color: var(--white-color);
 }
 
@@ -56,11 +61,34 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 4em;
 }
 
 h2 {
+  font-size: 3em;
+}
+
+section p {
   font-size: 2em;
+  text-align: center;
+}
+
+button {
+  color: var(--yellow-color);
+  background-color: var(--blue-color);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  cursor: pointer;
+}
+button a {
+  text-decoration: none;
+  color: var(--yellow-color);
+}
+
+.btn-delete {
+  background-color: var(--nav-text);
 }
 
 .load {
@@ -68,11 +96,24 @@ h2 {
   margin-right: 21em;
   margin-top: 5em;
   font-size: 2em;
-  box-shadow: 0 0 1em 1px rgb(77, 77, 77);
 }
-.load p {
+
+.error {
+  text-align: center;
+  margin-right: 18em;
+  margin-top: 5em;
+  font-size: 2em;
+}
+.error p {
+  text-transform: uppercase;
+  color: rgb(245, 2, 2);
   margin-left: 1em;
   margin-right: 1em;
+}
+
+.no_data {
+  color: var(--black-color);
+  font-size: 2em;
 }
 
 /*Size*/
@@ -143,14 +184,47 @@ nav a:hover {
   margin-bottom: 2em;
 }
 .team_list li a {
-  background-image: url("../img/pngegg.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   display: flex;
   flex-direction: column;
   font-size: 1.5em;
   text-decoration: none;
   text-transform: capitalize;
   color: var(--black-color);
+}
+.team_list li a img {
+  background-image: url("../img/pngegg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.team_list li a span {
+  margin: 0.3em 0 0.5em 0;
+}
+
+section > img {
+  width: 30%;
+}
+
+.detail {
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.detail .detail_list {
+  text-transform: capitalize;
+  list-style: none;
+  padding: 0;
+}
+.detail .detail_list li {
+  margin-top: 1rem;
+}
+
+.button_container {
+  display: flex;
+  gap: 2em;
+}
+.button_container button {
+  padding-left: 5em;
+  padding-right: 5em;
 }/*# sourceMappingURL=index.css.map */

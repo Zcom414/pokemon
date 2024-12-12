@@ -14,40 +14,43 @@ export const PokeList = () => {
 
     useEffect(() => {
 
-    //     const fetchPokemon = async () => {
-    //         try {
-    //             const list = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=151");
-    //             //setPokelist(list.data.results) //La "Liste" est vide (comme si const [list , setList] = useState([]) )
+        const fetchPokemon = async () => {
+            try {
+                const list = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=151");
+                //setPokelist(list.data.results) //La "Liste" est vide (comme si const [list , setList] = useState([]) )
                 
-    //             const responses = await Promise.all( //Récupére toutes les réponses et on crée un array
-    //                 list.data.results.map((pokemon) =>
-    //                     axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-    //                 )
-    //             );
+                const responses = await Promise.all( //Récupére toutes les réponses et on crée un array
+                    list.data.results.map((pokemon) =>
+                        axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+                    )
+                );
                 
-    //             // Stockez les données des pokémons dans l'état
-    //             setPokemons(responses.map((res) => res.data)); //On reprend la list pour afficher le result. des requêtes 
+                // Stockez les données des pokémons dans l'état
+                setPokemons(responses.map((res) => res.data)); //On reprend la list pour afficher le result. des requêtes 
                 
-    //         } catch (err) {
-    //             console.error(err);
-    //             setError(true);
-    //         } finally {
-    //             setLoading(false);
-    //         }
-    //     }
+            } catch (err) {
+                console.error(err);
+                setError(true);
+            } finally {
+                setLoading(false);
+            }
+        }
 
-    //     fetchPokemon();
+        fetchPokemon();
     }, [ ]);
 
     if (loading)
         return (
-        <div class="load">
+        <div className="load">
             <p>Loading ...</p>
         </div>
     )
 
     if (error)
-        return <p>Une erreur est survenue.</p>
+        return (
+            <div className="error">
+                <p>An error as occured.</p>
+            </div>)
 
     return (
         <section>

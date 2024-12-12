@@ -7,7 +7,9 @@ const teamSlice = createSlice({
     },
     reducers: {
         addToTeam: (state, action) => {
-            state.value.push(action.payload);
+            if (state.value.length < 6) {
+                state.value.push(action.payload);
+            }
         },
 
         deleteFromTeam: (state, action) =>{

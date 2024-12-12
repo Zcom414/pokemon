@@ -57,12 +57,14 @@ export const Team = () => {
                                 <span>{pokemon.name}</span>
                         </Link> 
 
-                        <button onClick={() => dispatch(deleteFromTeam(pokemon.id))}>Delete</button> 
+                        <button className="btn-delete" onClick={() => dispatch(deleteFromTeam(pokemon.id))}>Delete</button> 
                     </li>
                 ))}
                 </ul>
             ) : (
-                <p>Aucun Pokémon dans l'équipe.</p>
+                <div className="no_data">
+                    <p>Aucun Pokémon dans l'équipe.</p>
+                </div>
             )}
            
         </aside>

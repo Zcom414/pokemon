@@ -7,7 +7,7 @@ export const Home = () => {
             <h1> <strong>Welcome</strong> and create your dream team !!!</h1>  
 
             <p>
-                Fan of the firts generations ? Don't wait anymore !!! Start create your team NOW and take
+                Fan of the firts generations ? Don't wait anymore !!!<br/> Start create your team NOW and take
                 on new challenge !!!
             </p> 
             
