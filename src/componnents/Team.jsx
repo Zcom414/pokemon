@@ -4,12 +4,6 @@ import { useDispatch } from "react-redux";
 import { deleteFromTeam } from "../features/team/teamSlice";
 import axios from "axios";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-=======
-
-/*CSS*/
-import "../assets/scss/_team.scss"
->>>>>>> 534fa8e880116eccf5a571c675bd0290c36ffd86
 
 /*CSS*/
 import "../assets/scss/_team.scss"
