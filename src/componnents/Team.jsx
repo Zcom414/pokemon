@@ -3,7 +3,10 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteFromTeam } from "../features/team/teamSlice";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
+/*CSS*/
+import "../assets/scss/_team.scss"
 
 export const Team = () => {
     const team = useSelector((state) => state.team.value);
@@ -44,19 +47,24 @@ export const Team = () => {
     return (
         <aside>
             <h2>Your Team</h2>
-            
-            <ul className="team_list">
-                     {pokemons.length > 0 ? (
-                        pokemons.map((pokemon) => (
-                            <li key={pokemon.id}>{pokemon.name} 
-                                <button onClick={() => dispatch(deleteFromTeam(pokemon.id))}>Delete</button> 
-                            </li>
-                        ))
-                        
-                    ) : (
-                        <p>Aucun Pokémon dans l'équipe.</p>
-                    )}
-            </ul>
+            {pokemons.length > 0 ? (
+                <ul className="team_list">
+                {pokemons.map((pokemon) => (
+                    <li key={pokemon.id}>
+
+                        <Link to={`/pokemon/${pokemon.id}`}>
+                            <img src={pokemon.sprites.front_default} alt={`sprite_of_${pokemon.name}`}/>
+                            {pokemon.name}
+                        </Link> 
+
+                        <button onClick={() => dispatch(deleteFromTeam(pokemon.id))}>Delete</button> 
+                    </li>
+                ))}
+                </ul>
+            ) : (
+                <p>Aucun Pokémon dans l'équipe.</p>
+            )}
+           
         </aside>
     )
 }

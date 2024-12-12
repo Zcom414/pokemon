@@ -1,0 +1,33 @@
+/*Size*/
+nav {
+    width: 100%;
+    padding: 0.75em;
+}
+
+/*Position*/
+ nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.75em;
+ }
+
+ /*Backgorund*/
+ nav {
+    background-color: var(--background-nav);
+ }
+
+ /*Font*/
+ nav{
+    font-size: 2em;
+    text-transform: uppercase;
+ }
+
+ nav a{
+    text-decoration: none;
+    color: var(--white-color);
+ }
+ /*Hover*/
+
+ nav a:hover{
+    color: var(--hover-color);
+ }

@@ -12,7 +12,8 @@ const teamSlice = createSlice({
 
         deleteFromTeam: (state, action) =>{
             console.log("delete")
-            state.value.pop(action.payload)
+            const index = state.value.indexOf(action.payload);
+            state.value.splice(index, 1);
         }
     }
 });
