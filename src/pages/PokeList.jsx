@@ -13,10 +13,11 @@ export const PokeList = () => {
     // const id = pokemon.url.match(/\/pokemon\/(\d+)\//)[1]
 
     useEffect(() => {
+
         const fetchPokemon = async () => {
             try {
                 const list = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=151");
-                //setPokelist(response.data.results) //On expose pas la "Liste" directement car le useState est vide
+                //setPokelist(list.data.results) //La "Liste" est vide (comme si const [list , setList] = useState([]) )
                 
                 const responses = await Promise.all( //Récupére toutes les réponses et on crée un array
                     list.data.results.map((pokemon) =>
@@ -25,7 +26,7 @@ export const PokeList = () => {
                 );
                 
                 // Stockez les données des pokémons dans l'état
-                setPokemons(responses.map((res) => res.data)); //Mais 
+                setPokemons(responses.map((res) => res.data)); //On reprend la list pour afficher le result. des requêtes 
                 
             } catch (err) {
                 console.error(err);
@@ -51,11 +52,11 @@ export const PokeList = () => {
                 { pokemons.map((pokemon, index) => {
                     //const id = pokemon.url.match(/\/pokemon\/(\d+)\//)[1];
                     return <li key={index}>
-                            <Link to={`/pokemon/${pokemon.id}`}>
-                                <img src={pokemon.sprites.front_default} alt={`sprite_of_${pokemon.name}`}/>
-                                {pokemon.name}
-                            </Link>
-                        </li>
+                                <Link to={`/pokemon/${pokemon.id}`}>
+                                    <img src={pokemon.sprites.front_default} alt={`sprite_of_${pokemon.name}`}/>
+                                    {pokemon.name}
+                                </Link>
+                            </li>
                 }) }
             </ul>
         </section>

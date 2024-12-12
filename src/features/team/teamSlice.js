@@ -12,8 +12,9 @@ const teamSlice = createSlice({
 
         deleteFromTeam: (state, action) =>{
             console.log("delete")
-            const index = state.value.indexOf(action.payload);
-            state.value.splice(index, 1);
+
+            const index = state.value.indexOf(action.payload); //Set un index de l'ID
+            state.value.splice(index, 1); //Suppression d'un seul élément depuis l'index (donc l'ID lui même)
         }
     }
 });

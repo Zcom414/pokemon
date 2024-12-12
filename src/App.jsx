@@ -8,6 +8,7 @@ import { PokeList } from './pages/PokeList'
 import { PokeDetails } from './pages/PokeDetails'
 import { Team } from './componnents/Team'
 
+
 function App() {
 
   return (

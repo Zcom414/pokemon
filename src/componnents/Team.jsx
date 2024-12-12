@@ -4,6 +4,12 @@ import { useDispatch } from "react-redux";
 import { deleteFromTeam } from "../features/team/teamSlice";
 import axios from "axios";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
+=======
+
+/*CSS*/
+import "../assets/scss/_team.scss"
+>>>>>>> 534fa8e880116eccf5a571c675bd0290c36ffd86
 
 /*CSS*/
 import "../assets/scss/_team.scss"
@@ -54,7 +60,7 @@ export const Team = () => {
 
                         <Link to={`/pokemon/${pokemon.id}`}>
                             <img src={pokemon.sprites.front_default} alt={`sprite_of_${pokemon.name}`}/>
-                            {pokemon.name}
+                                <span>{pokemon.name}</span>
                         </Link> 
 
                         <button onClick={() => dispatch(deleteFromTeam(pokemon.id))}>Delete</button> 
