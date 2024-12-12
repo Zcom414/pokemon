@@ -1,5 +1,6 @@
 :root{
-    --yellow-color: rgb(234, 224, 28);
+    --yellow-color: rgb(255, 203, 5);
+    --blue-color: rgb(42, 117, 187);
     --nav-text: rgb(121, 7, 7);
     --background-nav: rgb(239, 83, 80);
     --white-color :  rgb(255, 248, 246);
@@ -7,6 +8,13 @@
     --black-color :  rgb(27, 27, 27);
     --hover-color : rgb(138, 43, 226);
 }
+
+@font-face {
+    font-family: 'poke-font';
+    src: local('poke-font'), url(../fonts/Pokemon-Solid.ttf) format('truetype');
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+  }
 
 html{
     font-size: 62.5%;
@@ -33,7 +41,6 @@ aside, section {
     
     box-sizing: border-box;
     margin: 5em 1% 0 1% ;
-    
     background-color: var(--background-section);
     box-shadow: 0 0 1em 1px rgb(77, 77, 77);
 }
@@ -46,8 +53,14 @@ section {
     width: 78%;
 }
 
+h1, h2 {
+    font-family: 'poke-font';
+    color: var(--yellow-color);
+    -webkit-text-stroke: 1px var(--blue-color);
+}
+
 h1 {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 h2 {
@@ -57,5 +70,13 @@ h2 {
 //Loading
 
 .load{
-    text-align: start;
+    text-align: center;
+    margin-right: 21em;
+    margin-top: 5em;
+    font-size: 2em;
+    box-shadow: 0 0 1em 1px rgb(77, 77, 77);
+    p{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
 }

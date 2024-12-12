@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 /*CSS*/
 import "../assets/scss/_team.scss"
 
-
 export const Team = () => {
     const team = useSelector((state) => state.team.value);
    const [pokemons, setPokemons] = useState([]);

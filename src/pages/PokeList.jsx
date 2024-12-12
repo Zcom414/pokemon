@@ -40,7 +40,11 @@ export const PokeList = () => {
     }, [ ]);
 
     if (loading)
-        return <p class="load">Chargement des données ...</p>
+        return (
+        <div class="load">
+            <p>Loading ...</p>
+        </div>
+    )
 
     if (error)
         return <p>Une erreur est survenue.</p>

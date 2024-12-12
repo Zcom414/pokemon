@@ -5,22 +5,21 @@
     list-style: none;
     justify-content: center;
     padding-left: 0;
-  
     li { 
         text-align: center;
         width: 15em;
         margin-bottom: 2em;
         a {
-           background-image: url("../img/pngegg.png");
-           background-size: contain;
-           background-repeat: no-repeat;
-           background-position: center;
-           display: flex;
-           flex-direction: column;
-           font-size: 1.5em;
-           text-decoration: none;
-           text-transform: capitalize;
-           color: var(--black-color);
+            background-image: url("../img/pngegg.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex; 
+            flex-direction: column;
+            font-size: 1.5em;
+            text-decoration: none;
+            text-transform: capitalize;
+            color: var(--black-color);
         }
     }   
 }
