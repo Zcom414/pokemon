@@ -1,1 +1,131 @@
-/*# sourceMappingURL=index.css.map */
+:root {
+  --yellow-color: rgb(234, 224, 28);
+  --nav-text: rgb(121, 7, 7);
+  --background-nav: rgb(239, 83, 80);
+  --white-color: rgb(255, 248, 246);
+  --background-section: rgb(250, 240, 240);
+  --black-color: rgb(27, 27, 27);
+  --hover-color: rgb(138, 43, 226);
+}
+
+html {
+  font-size: 62.5%;
+  background-color: var(--white-color);
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+aside, section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 5em 1% 0 1%;
+  background-color: var(--background-section);
+  box-shadow: 0 0 1em 1px rgb(77, 77, 77);
+}
+
+aside {
+  width: 18%;
+}
+
+section {
+  width: 78%;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+/*Size*/
+nav {
+  width: 100%;
+  padding: 0.75em;
+}
+
+/*Position*/
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.75em;
+}
+
+/*Backgorund*/
+nav {
+  background-color: var(--background-nav);
+}
+
+/*Font*/
+nav {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+/*Hover*/
+nav a:hover {
+  color: var(--hover-color);
+}
+
+.poke_list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  padding-left: 0;
+}
+.poke_list li {
+  text-align: center;
+  width: 20rem;
+}
+.poke_list li a {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--black-color);
+}
+
+.team_list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  padding-left: 0;
+}
+.team_list li {
+  text-align: center;
+  width: 15em;
+  margin-bottom: 2em;
+}
+.team_list li a {
+  background-image: url("../img/pngegg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--black-color);
+}/*# sourceMappingURL=index.css.map */

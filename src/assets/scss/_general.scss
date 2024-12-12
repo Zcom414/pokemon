@@ -1,0 +1,55 @@
+:root{
+    --yellow-color: rgb(234, 224, 28);
+    --nav-text: rgb(121, 7, 7);
+    --background-nav: rgb(239, 83, 80);
+    --white-color :  rgb(255, 248, 246);
+    --background-section :  rgb(250, 240, 240);
+    --black-color :  rgb(27, 27, 27);
+    --hover-color : rgb(138, 43, 226);
+}
+
+html{
+    font-size: 62.5%;
+    background-color: var(--white-color);
+}
+
+body {
+    margin: 0;
+}
+
+//page
+#root {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+
+aside, section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    
+    box-sizing: border-box;
+    margin: 5em 1% 0 1% ;
+    
+    background-color: var(--background-section);
+    box-shadow: 0 0 1em 1px rgb(77, 77, 77);
+}
+
+aside {
+    width: 18%;
+}
+
+section {
+    width: 78%;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 2em;
+}
