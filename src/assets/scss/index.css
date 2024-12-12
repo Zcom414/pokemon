@@ -50,6 +50,10 @@ h2 {
   font-size: 2em;
 }
 
+.load {
+  text-align: start;
+}
+
 /*Size*/
 nav {
   width: 100%;
