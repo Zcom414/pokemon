@@ -6,3 +6,5 @@ export const store = configureStore({
         team: teamReducer
     }
 })
+
+//Coeur du Redux -> il propage les reducers

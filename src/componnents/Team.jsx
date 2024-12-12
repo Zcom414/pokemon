@@ -9,14 +9,16 @@ import { Link } from "react-router-dom";
 import "../assets/scss/_team.scss"
 
 export const Team = () => {
+    
     const team = useSelector((state) => state.team.value);
+
    const [pokemons, setPokemons] = useState([]);
    const [ loading, setLoading ] = useState(true); 
-   const [ err, setErr ] = useState(false);
+   const [ error, setError ] = useState(false);
    
    const dispatch = useDispatch();
 
-    useEffect(()=>{
+    useEffect(()=> {
 
         const fetchData = async () => {
             try {
@@ -29,20 +31,27 @@ export const Team = () => {
                 setPokemons(responses.map((res) => res.data));
             } catch (error) {
                 console.error("Cannot fetch pokemons", error);
-                setErr(true);
+                setError(true);
             } finally {
                 setLoading(false);
             }
         };
         
         fetchData()
-    }, [team])
+    }, [team]) // !!!REFRESH A CHAQUE CHANGEMENT DANS TEAMS
     
     if (loading)
-        return <p>Chargement des données ...</p>
+        return (
+        <div className="load">
+            <p>Loading ...</p>
+        </div>
+    )
 
-    if (err)
-        return <p>Une erreur est survenue .</p>
+    if (error)
+        return (
+            <div className="error">
+                <p>An error as occured.</p>
+            </div>)
 
     return (
         <aside>

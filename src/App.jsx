@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import {Route, Routes, HashRouter} from "react-router-dom"
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { NavBar } from './componnents/NavBar'
@@ -12,7 +12,7 @@ import { Team } from './componnents/Team'
 function App() {
 
   return (
-    <BrowserRouter>
+    <HashRouter> {/*BrowseRouter /= w/ github*/}
         <NavBar/>
         <Team/>
         <Routes>
@@ -20,7 +20,7 @@ function App() {
           <Route path='/pokelist' Component={PokeList}/>
           <Route path='/pokemon/:id' Component={PokeDetails}/>
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

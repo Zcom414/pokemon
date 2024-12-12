@@ -12,7 +12,7 @@ import "./assets/scss/_general.scss"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store}> {/*Donnent accés aux slices (du coup à App)*/}
       <App />
     </Provider>
   </React.StrictMode>,

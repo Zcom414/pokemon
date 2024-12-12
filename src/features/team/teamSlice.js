@@ -21,7 +21,7 @@ const teamSlice = createSlice({
     }
 });
 
-export const { addToTeam , deleteFromTeam} = teamSlice.actions;
+export const { addToTeam , deleteFromTeam} = teamSlice.actions; //Action d'add et de del
 
 
 export default teamSlice.reducer;

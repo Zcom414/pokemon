@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import '../assets/scss/_poke_list.scss'
 
 export const PokeList = () => {
-    const [ pokemons, setPokemons ] = useState([]); 
+    const [ pokemons, setPokemons ] = useState([]); // = Hook REACT de variable d'état
     const [ loading, setLoading ] = useState(true); 
     const [ error, setError ] = useState(false);
 
     // const id = pokemon.url.match(/\/pokemon\/(\d+)\//)[1]
 
-    useEffect(() => {
+    useEffect(() => { //Gestation des effets secondaires peandant le "chargement"
 
         const fetchPokemon = async () => {
             try {
@@ -37,7 +37,7 @@ export const PokeList = () => {
         }
 
         fetchPokemon();
-    }, [ ]);
+    }, []);
 
     if (loading)
         return (
