@@ -205,6 +205,10 @@ section > img {
   width: 30%;
 }
 
+section > h2 {
+  text-transform: capitalize;
+}
+
 .detail {
   font-size: 2em;
   display: flex;
@@ -218,6 +222,17 @@ section > img {
 }
 .detail .detail_list li {
   margin-top: 1rem;
+  display: flex;
+  align-items: baseline;
+}
+.detail .detail_list li h3 {
+  font-weight: unset;
+  font-size: 1em;
+  margin: 0;
+}
+.detail .detail_list li span {
+  display: flex;
+  gap: 2em;
 }
 
 .button_container {

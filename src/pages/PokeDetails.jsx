@@ -58,23 +58,37 @@ export const PokeDetails = () =>{
         return(
         <section>
             <h2>{`${data.name}`}'s details</h2>
+            <div className="button_container">
+                <button onClick={() => dispatch(addToTeam(data.id))}>Add</button>
+                {team.includes(data.id) && 
+                    <button className="btn-delete" onClick={() => dispatch(deleteFromTeam(data.id))}>Delete</button>
+                }
+            </div>
             <img src={data.sprites.front_default} alt={`sprite_of_${data.name}`}/>
             
             <div className="detail">
                 <ul className="detail_list">
 
                     <li>Name : {data.species.name}</li>
-                    {types.map((value , index) =>
-                        (<li key={index}><img src={value.sprites["generation-viii"]["brilliant-diamond-and-shining-pearl"].name_icon} alt={`sprite_of_${data.name}`} /></li>)
-                    )}
+                    
+                    
+                    <li>
+                        <h3>Abilities : </h3>
+                        <div>
+                            {data.abilities.map((value , index) =>
+                                (<span key={index}>{value.ability.name}</span>)
+                            )}
+                        </div>
+                    </li>
+                        
+                        <div>
+                            {types.map((value , index) =>
+                                (<li key={index}><img src={value.sprites["generation-viii"]["brilliant-diamond-and-shining-pearl"].name_icon} alt={`sprite_of_${data.name}`} /></li>)
+                            )}
+                        </div>
+                    
                 </ul> 
 
-                <div className="button_container">
-                    <button onClick={() => dispatch(addToTeam(data.id))}>Add</button>
-                    {team.includes(data.id) && 
-                        <button className="btn-delete" onClick={() => dispatch(deleteFromTeam(data.id))}>Delete</button>
-                    }
-                </div>
             </div>
         </section>
         )
